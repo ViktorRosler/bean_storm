@@ -1,0 +1,43 @@
+int quicksort(list a, int low, int high)
+{
+	if low < high
+	{
+		int p = partition(a, low, high)
+		quicksort(a, low, p)
+		quicksort(a, p + 1, high)
+	}
+}
+
+
+int partition(list a, int low, int high)
+{
+	int pivot = a[(high + low) // 2]
+	int i = low - 1
+	int j = high + 1
+	
+	while True
+	{
+		i = i + 1
+		while a[i] < pivot
+		{
+			i = i + 1
+		}
+		
+		j = j - 1
+		while a[j] > pivot
+		{
+			j = j - 1
+		}
+		
+		if i >= j
+		{
+			return j
+		}
+		
+		int temp = a[i]
+		a[i] = a[j]
+		a[j] = temp
+	}
+}
+
+

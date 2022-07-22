@@ -1,0 +1,73 @@
+
+bool passed = True
+
+
+if (False) {passed = False}
+if (!True) {passed = False}
+
+if (False || False) {passed = False}
+if (!(False || True)) {passed = False}
+if (!(True || False)) {passed = False}
+if (!(True || True)) {passed = False}
+
+if (False && False) {passed = False}
+if (True && False) {passed = False}
+if (False && True) {passed = False}
+if (!(True && True)) {passed = False}
+
+if (0) {passed = False}
+if (0.0) {passed = False}
+if ('') {passed = False}
+if ("") {passed = False}
+if ([]) {passed = False}
+
+if (!(2)) {passed = False}
+if (!(3.3)) {passed = False}
+if (!('asd')) {passed = False}
+if (!("qwe")) {passed = False}
+if (!([1])) {passed = False}
+
+
+int i = 1
+list il = [2]
+int func() {return 3}
+class IC {int i = 4}
+IC ic
+
+if (0 == 2) {passed = False}
+if (0 == i) {passed = False}
+if (0 == il[0]) {passed = False}
+if (0 == func()) {passed = False}
+if (0 == ic.i) {passed = False}
+
+if (!(0 != 2)) {passed = False}
+if (!(0 != i)) {passed = False}
+if (!(0 != il[0])) {passed = False}
+if (!(0 != func())) {passed = False}
+if (!(0 != ic.i)) {passed = False}
+
+if (0 >= 2) {passed = False}
+if (0 >= i) {passed = False}
+if (0 >= il[0]) {passed = False}
+if (0 >= func()) {passed = False}
+if (0 >= ic.i) {passed = False}
+
+if (0 > 2) {passed = False}
+if (0 > i) {passed = False}
+if (0 > il[0]) {passed = False}
+if (0 > func()) {passed = False}
+if (0 > ic.i) {passed = False}
+
+if (!(0 <= 2)) {passed = False}
+if (!(0 <= i)) {passed = False}
+if (!(0 <= il[0])) {passed = False}
+if (!(0 <= func())) {passed = False}
+if (!(0 <= ic.i)) {passed = False}
+
+if (!(0 < 2)) {passed = False}
+if (!(0 < i)) {passed = False}
+if (!(0 < il[0])) {passed = False}
+if (!(0 < func())) {passed = False}
+if (!(0 < ic.i)) {passed = False}
+
+passed

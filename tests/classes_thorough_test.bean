@@ -1,0 +1,69 @@
+
+bool passed = True
+
+class A
+{
+	int i
+	float f
+	bool b
+	string s
+	list l
+	C c
+
+	A() {i = 22}
+
+	A(int a) {i = a}
+
+	void set_i(int a) {i = a}
+	void set_f(float a) {f = a}
+	void set_b(bool a) {b = a}
+	void set_s(string a) {s = a}
+	void set_l(list a) {l = a}
+	void set_c(C a) {c = a}
+
+	int get_i() {return i}
+	float get_f() {return f}
+	bool get_b() {return b}
+	string get_s() {return s}
+	list get_l() {return l}
+	C get_c() {return c}
+
+	int w = 66	
+}
+
+class B < A
+{
+	B(int a)
+	{
+		bool b
+		A(a)
+	}
+
+	int w = 44
+
+	static float sf = 9.9
+	
+}
+
+class C {int q = 99}
+
+A a()
+
+B b
+B b2(11)
+B b3 = b
+
+if (a.i != 22 || b2.i != 11) {passed = False}
+
+if (b.get_s() != '') {passed = False}
+
+b.set_s('asdf')
+if (b.get_s() != 'asdf') {passed = False}
+
+b.c.q = 66
+if (b.c.q != 66 || b2.c.q != 99 || b3.c.q != 99) {passed = False}
+
+b.sf = 8.8
+if (b2.sf != 8.8 || b3.sf != 8.8) {passed = False}
+
+passed

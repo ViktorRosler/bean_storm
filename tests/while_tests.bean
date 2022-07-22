@@ -1,0 +1,66 @@
+
+
+bool passed = True
+
+#Test that placement of curly brackets does not affect function.
+
+int i = 0
+string a = "fel"
+
+while(i < 1){a = "rätt"
+i++}
+if( a != "rätt")
+{print "error on line 13"
+passed = False}
+a = "fel"
+i = 0
+
+while(i < 1){ 
+a = "rätt"
+i++
+}
+if( a != "rätt")
+{print "error on line 23"
+passed = False}
+a = "fel"
+i = 0
+
+while(i < 1){
+a = "rätt"
+i++}
+if( a != "rätt")
+{print "error on line 32"
+passed = False}
+a = "fel"
+i = 0
+
+while(i < 1)
+{a = "rätt"
+i++}
+if( a != "rätt")
+{print "error on line 41"
+passed = False}
+a = "fel"
+i = 0
+
+while(i < 1)
+{a = "rätt"
+i++
+}
+if( a != "rätt")
+{print "error on line 51"
+passed = False}
+a = "fel"
+i = 0
+
+while(i < 1)
+{
+a = "rätt"
+i++
+if( a != "rätt")
+{print "error on line 61"
+passed = False}
+}
+
+
+passed

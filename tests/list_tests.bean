@@ -1,0 +1,49 @@
+bool passed = True
+
+list seq = [1,2,3,4,5]
+
+if (seq[2] != 3){print "error on line 5"
+passed = False}
+
+seq[1] = 5
+
+if (seq[1] != 5){print "error on line 10"
+passed = False}
+
+seq [1] = seq[0]
+
+if (seq[1] != seq[0]){print "error on line 15"
+passed = False}
+
+if (seq[1] != 1){print "error on line 18" # asdf
+passed = False}
+
+list mix = ["Yes", 1, "No", 2]
+
+if (mix[1] != 1){print "error on line 23"
+passed = False}
+
+if (mix[0] != "Yes"){print "error on line 26"
+passed = False}
+
+string yes = mix[2]
+
+if (yes != "No"){print "error on line 31"
+passed = False}
+
+int one = mix [3]
+
+if (one != 2){print "error on line 36"
+passed = False}
+
+list nested = [[1],[[1,2,3],2],[3]]
+
+if (nested[1][0][1] != 2){print "error on line 41"
+passed = False}
+
+nested[1][0][1] = 3
+
+if (nested[1][0][1] != 3){print "error on line 46"
+passed = False}
+
+passed

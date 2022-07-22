@@ -1,0 +1,88 @@
+
+
+class Node
+{
+    Node left
+    Node right
+    int value
+    bool has_value = False
+    
+    static int node_count
+    
+    Node(int val) 
+    {
+        value = val
+        has_value = True
+        node_count += 1
+    }
+    
+    void add(int val)
+    {
+        if (!has_value)
+        {
+            value = val
+            has_value = True
+            node_count += 1
+        }
+        elif (val < value) 
+        {
+            left.add(val)
+        }
+        else
+        {
+            right.add(val)
+        }
+        
+        
+    }
+}
+
+Node tree(5)
+
+tree.add(3)
+tree.add(2)
+#tree.add(7)
+
+print tree.node_count # 4
+
+int rec(int i)
+{
+	if (i > 5)
+	{
+		return i
+	}
+	else
+	{
+		return rec(i+1)
+	}
+}
+
+print rec(3)
+
+int f() {return 55}
+
+
+int a = f() 
+int b = f()
+
+print 1
+
+
+#¤¤¤¤
+
+
+print 2.2
+
+
+print True 
+
+print 'Bean Storm!'
+
+load test2.bean
+
+load asdf
+
+print [2, 'asdf', 5.5, True, [1,2,3]]
+
+
+print 66

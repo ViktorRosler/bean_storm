@@ -1,0 +1,196 @@
+bool passed = True
+
+ #can the classes access global variables? 
+int speedrule = 100
+int wheelrule = 4
+
+ #defineing a driver class.
+class Driver
+{
+	bool license
+	int age
+	bool insurance
+	bool allowed
+
+	Driver()
+	{
+		license = False
+		insurance = False
+		allowed = False
+	}
+
+	Driver(int n_age)
+	{
+		license = False
+		insurance = False
+		allowed = False
+		age = n_age
+	}
+
+	Driver(bool n_license, int n_age, bool n_insurance)
+	{
+		license = n_license
+		insurance = n_insurance
+		age = n_age
+		
+
+		if (license && insurance && age >= 18)
+		{
+			allowed = True
+		}
+		else
+		{
+			allowed = False
+		}
+	}
+	
+	bool can_drive()
+	{
+		return allowed
+	}
+	
+	void re_evaluate()
+	{
+		if (license && insurance && age >= 18)
+		{
+			allowed = True
+		}
+		else
+		{
+			allowed = False
+		}
+	}
+}
+
+ #defining the car class.
+class Car
+{
+	int wheels = wheelrule
+	int topspeed = speedrule
+	int max_passengers = 4
+	int cur_passengers = 0
+	Driver driver
+	
+	Car()
+	{
+		cur_passengers = 0
+	}
+	
+	Car(Driver n_driver)
+	{
+		driver = &n_driver
+	}
+	
+	void add_passengers(int p)
+	{
+		if (cur_passengers + p <= max_passengers)
+		{
+			cur_passengers = cur_passengers + p
+		}
+	}
+	
+	int check_passengers()
+	{
+		return cur_passengers
+	}
+	
+	float drive(int distance)
+	{
+		if (driver.can_drive())
+		{
+			float time = distance / topspeed
+			return time * 60
+		}
+		else
+		{
+			return 9999999.0
+		}
+	}
+}
+
+ #testing car class.
+Car mycar
+
+mycar.add_passengers(5)
+
+if (mycar.check_passengers() != 0)
+{
+	print "Error on line 116"
+	passed = False
+}
+
+mycar.add_passengers(3)
+
+if (mycar.check_passengers() != 3)
+{
+	print "Error on line 124"
+	passed = False
+}
+
+mycar.add_passengers(1)
+
+if (mycar.check_passengers() != 4)
+{
+	print "Error on line 132"
+	passed = False
+}
+
+if (mycar.topspeed != 100)
+{
+	print "Error on line 138"
+	passed = False
+}
+
+ #testing driver in car class.
+Driver driverDad(True, 55, True)
+
+Car car2(&driverDad)
+
+if (car2.drive(100) != 60)
+{
+	print "Error on line 149"
+	passed = False
+}
+
+
+
+ #testing inheritance for classes.
+class YouthDriver < Driver
+{
+	void re_evaluate()
+	{
+		if (license && insurance && age >= 16)
+		{
+			allowed = True
+		}
+		else
+		{
+			allowed = False
+		}
+	}
+
+	YouthDriver(bool n_license, int n_age, bool n_insurance)
+	{
+		license = n_license
+		insurance = n_insurance
+		age = n_age
+		
+		re_evaluate()
+	}
+	
+	
+}
+
+YouthDriver ydriver(True, 16, True)
+
+if (ydriver.can_drive() != True)
+{
+	print "Error on line 196"
+	passed = False
+}
+
+ydriver.age = 14
+
+
+
+passed

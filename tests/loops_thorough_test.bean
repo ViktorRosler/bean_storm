@@ -1,0 +1,59 @@
+
+bool passed = True
+
+
+int i
+while (i < 5)
+{
+	++i
+}
+
+if (i != 5) {passed = False}
+
+while (True)
+{
+	++i
+	if (i == 8) {break}
+}
+
+if (i != 8) {passed = False}
+
+while (i < 12)
+{
+	++i
+	continue
+	i = i - 2
+}
+
+
+for (int j = 1 : j < 5 : ++j)
+{
+	if (!j) {passed = False}
+}
+
+int j
+for (j : j < 5 : ++j)
+{
+	break
+}
+
+if (j != 0) {passed = False}
+
+class LC {int i = 5}
+LC lc
+
+
+for (lc.i : True : lc.i = lc.i + 1)
+{
+	if (lc.i == 99) {break}
+}
+
+if (lc.i != 99) {passed = False}
+
+string s = 'asdf'
+for (string s : s != 'xxxxx' : s = s + 'x')
+{
+	if (s == 'asdf') {passed = False}
+}
+
+passed

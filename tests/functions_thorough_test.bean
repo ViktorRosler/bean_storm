@@ -1,0 +1,82 @@
+
+bool passed = True
+
+class A {int i = 99}
+A a
+
+int inf() {return}
+float ff() {return}
+bool bf() {return}
+string sf() {return}
+list lf() {return}
+A af() {return}
+
+A aa = af()
+if (inf() != 0 || ff() != 0.0 || bf() != False || sf() != "" || lf() != [] || aa.i != a.i) {passed = False}
+
+int inf2() {return 1}
+float ff2() {return 1.0}
+bool bf2() {return True}
+string sf2() {return 'asdf'}
+list lf2() {return [1]}
+A af2() 
+{   
+    A a
+    a.i = 88
+	return a
+}
+
+aa = af2()
+if (inf2() != 1 || ff2() != 1.0 || bf2() != True || sf2() != "asdf" || aa.i != 88) {passed = False}
+
+
+void vf() {return}
+if (vf()) {passed = False} 
+
+int inf3(int a, int b) {return a+b}
+float ff3(float a, float b) {return a+b}
+bool bf3(bool a, bool b) {return b}
+string sf3(string a, string b) {return a+b}
+list lf3(list a, list b) {return a+b}
+A af3(A a, A b)
+{
+	a.i = b.i
+	return b
+}
+
+if (inf3(3,5) != 8 || ff3(4.5, 7.6) != 12.1 || bf3(True, False) || sf3('as', 'df') != 'asdf') {passed = False}
+
+A c
+A d
+d.i = 23
+c = af3(c,d)
+if (c.i != 23) {passed = False}
+
+
+int rec(int i)
+{
+	if (i > 10) {return i}
+	else {return rec(i+1)}
+}
+
+
+if (rec(1) != 11) {passed = False}
+
+
+int func(int i) 
+{
+	if (i == 25) {return i}
+	return func2(1+i)
+}
+
+int func2(int i)
+{
+	if (i == 25) {return i}
+	return func(1+i)
+}
+
+
+
+if (func(1) != 25 || func2(0) != 25) {passed = False}
+
+passed

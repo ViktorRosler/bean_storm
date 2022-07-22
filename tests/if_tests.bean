@@ -1,0 +1,167 @@
+
+
+bool passed = True
+
+#Test that placement of curly brackets does not affect function.
+
+string a = "fel"
+if(True){a = "rätt"}
+if( a != "rätt")
+{print "error on line 10"
+passed = False}
+
+a = "fel"
+if(True){ 
+a = "rätt"
+}
+if( a != "rätt")
+{print "error on line 18"
+passed = False}
+
+ # test
+if(True){
+a = "rätt"}
+if( a != "rätt")
+{print "error on line 25"
+passed = False}
+a = "fel"
+
+if(True)
+{a = "rätt"}
+if( a != "rätt")
+{print "error on line 32"
+passed = False}
+a = "fel"
+
+if(True)
+{a = "rätt"
+}
+if( a != "rätt")
+{print "error on line 40"
+passed = False}
+a = "fel"
+
+if(True)
+{
+a = "rätt"
+if( a != "rätt")
+{print "error on line 48"
+passed = False}
+}
+a = "fel"
+
+
+#Test that unary operator affects right variable.
+
+int i = 0
+
+if(True){if( i != 0){print "error on line 58"
+passed = False}}
+++i
+
+if(True){ 
+if( i != 1){print "error on line 63"
+passed = False}
+++i
+}
+
+if(True){
+if( i != 2){print "error on line 69"
+passed = False}
+++i}
+
+if(True)
+{if( i++ != 3){print "error on line 74"
+passed = False}}
+
+
+if(True)
+{if( i != 4){print "error on line 79"
+passed = False}
+}
+
+if(True)
+{
+i++
+i
+if( i != 5){print "error on line 87"
+passed = False}
+++i
+}
+
+
+#Test nestled if statements
+
+int b = 10
+int c = 5
+
+if(b/c == 2)
+{
+	if(b == 10)
+	{
+		# comment test
+		c = 2
+		# comment test
+	}
+	else
+	{
+		# comment test
+		print "error on line 106"
+		passed = False
+		# comment test
+	}
+}
+else
+{
+	print "error on line 112"
+	passed = False
+}
+
+if(b/c == 2)
+{
+	print "error on line 118"
+	passed = False
+}
+else
+{
+	if (c == 2)
+	{
+		b + c
+	}
+}
+
+if(False)
+{
+	print "error on line 131"
+	passed = False
+}
+else
+{
+	if(False)
+	{
+		print "error on line 138"
+		passed = False
+	}
+	else
+	{
+		if(False)
+		{
+			print "error on line 145"
+			passed = False
+		}
+		elif(True)
+		{
+			if(False)
+			{
+				print "error on line 152"
+				passed = False
+			}
+			else
+			{
+				"ok"
+			}
+		}
+	}
+}
+
+passed

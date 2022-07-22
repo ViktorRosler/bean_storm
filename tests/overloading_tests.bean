@@ -1,0 +1,76 @@
+bool passed = True
+
+int addition (int a, int b)
+{
+	return a + b
+}
+
+float addition (float a, float b)
+{
+	return a + b
+}
+
+int addition (int a, int b, int c)
+{
+	int i = 0
+	int ans = 0
+	while (i < c)
+	{
+		ans = ans + a + b
+		i++
+	}
+	return ans
+}
+
+if (addition(1,2) != 3) 
+{passed = False
+print "Error on line 26"}
+
+if (addition(2.4, 2.5) != 4.9) 
+{passed = False
+print "Error on line 30"}
+
+if (addition(1, 2, 3) != 9) 
+{passed = False
+print "Error on line 34"}
+
+
+#Volume of a cube
+int volume(int len)
+{
+	return len * len * len
+}
+
+#Volume of a cylinder
+float volume(float radius, float height)
+{
+	float ans = 3.1415926 * radius * radius * height
+	ans = ans // 1
+	return ans
+}
+
+#Volume of a cuboid
+float volume(float len, float width, float height)
+{
+	return len * width * height
+}
+
+
+if (volume(1) != 1) 
+{passed = False
+print "Error on line 59"}
+
+if (volume(10) != 1000)
+{passed = False
+print "Error on line 63"}
+
+if (volume(3.0, 20.0) != 565.0)
+{passed = False
+print "Error on line 69"}
+
+if (volume(5.0, 3.0, 7.0) != 105)
+{passed = False
+print "Error on line 73"}
+
+
+passed

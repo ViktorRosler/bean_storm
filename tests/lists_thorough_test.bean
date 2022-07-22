@@ -1,0 +1,31 @@
+
+bool passed = True
+
+int i = 6
+list il = [8]
+bool func() {return True}
+class IC {int i = 9}
+IC ic
+
+list l = [0, 1.0, True, 'str', [1,2,3]]
+if (l[0] != 0 || l[1] != 1.0 || l[2] != True || l[3] != 'str') {passed = False}
+
+list m = [-2, --2, 2--, ++2, 2++, 2+2, 2-2, 2/2, 4//3, 2*3, 4%3]
+if (m[0] != -2 || m[1] != 1 || m[2] != 2 || m[3] != 3 || m[4] != 2) {passed = False}
+if (m[5] != 4 || m[6] != 0 || m[7] != 1 || m[8] != 1 || m[9] != 6 || m[10] != 1) {passed = False}
+
+list n = [i, func(), il[0], ic.i]
+if (n[0] != 6 || n[1] != True || n[2] != 8 || n[3] != 9) {passed = False}
+i = 7
+il[0] = 6
+ic.i = 5
+if (n[0] != 6 || n[2] != 8 || n[3] != 9) {passed = False}
+n[0] = 1
+n[1] = 2
+n[2] = 3
+if (i != 7 || il[0] != 6 || ic.i != 5) {passed = False}
+
+list o = [[[1],[2]],[[[3]]],[4]]
+if (o[0][1][0] != 2 || o[1][0][0][0] != 3 || o[2][0] != 4) {passed = False}
+
+passed

@@ -1,0 +1,235 @@
+
+bool passed = True
+
+# TEST DECLARE VARIABLE DEFAULT VALUE
+int i 
+float f
+bool b
+string s
+list l
+auto a = 1
+
+if (i != 0 || f != 0.0 || b || s != '' || l != [] || a != 1) {passed = False}
+
+# TEST DECLARE VARIABLE INT
+class Ic {int i = 22}
+Ic ic
+int ri() {return 55}
+list il = [2,3]
+int ti = 88
+
+int i2 = 4
+int i3 = ++4
+int i4 = 2+4
+int i5 = il[1]
+int i6 = ri()
+int i7 = ic.i
+int i8 = ti
+
+if (i2 != 4 || i3 != 5 || i4 != 6 || i5 != 3 || i6 != 55 || i7 != 22 || i8 != 88) {passed = False}
+
+# TEST FLOAT
+class Fc {float f = 0.6}
+Fc fc
+float rf() {return 0.5}
+list fl = [0.4, 4.5]
+float tf = 0.7
+
+float f2 = 0.1
+float f3 = ++(-0.8)
+float f4 = f2 + f3
+float f5 = fl[0]
+float f6 = rf()
+float f7 = fc.f
+float f8 = tf
+
+if (f2 != 0.1 || f3 != 0.2 || f4 != 0.3 || f5 != 0.4 || f6 != 0.5 || f7 != 0.6 || f8 != 0.7) {passed = False}
+
+# TEST BOOL
+class Bc {bool b = True}
+Bc bc
+bool rb() {return True}
+list bl = [True, False]
+bool tb = True
+
+bool b2 = True
+bool b3 = bl[0]
+bool b4 = rb()
+bool b5 = bc.b
+bool b6 = tb
+bool b7 = True
+
+if (!b2 || !b3 || !b4 || !b5 || !b6 || !b7) {passed = false}
+
+# TEST STRING
+class Sc {string s = 'q'}
+Sc sc
+string rs() {return 'w'}
+list sl = ['e', 'd']
+string ts = 'r'
+
+string s2 = 'y'
+string s3 = 'h' + 'i'
+string s4 = sl[0]
+string s5 = rs()
+string s6 = sc.s
+string s7 = ts
+
+if (s2 != 'y' || s3 != 'hi' || s4 != 'e' || s5 != 'w' || s6 != 'q' || s7 != 'r') {passed = False}
+
+# TEST LIST
+class Lc {list l = [1,2]}
+Lc lc
+list rl() {return [3,4]}
+list lll = [[1], [2]]
+list tl = [5,6]
+
+list l2 = [8,9]
+list l3 = l2 + [4]
+list l4 = lll[1]
+list l5 = rl()
+list l6 = lc.l
+list l7 = tl
+
+if (l2[0] != 8 || l3[0] != 8 || l4[0] != 2 || l5[0] != 3 || l6[0] != 1 || l7[0] != 5) {passed = False}
+
+# TEST DECLARE VARIABLE PASS BY REFERENCE
+int ii = 7
+int ii2 = &ii
+ii = 9
+if (ii2 != 9) {passed = False}
+ii2 = 5
+if (ii != 5) {passed = False}
+
+float ff = 6.7
+float ff2 = &ff
+ff = 4.4
+if (ff2 != 4.4) {passed = False}
+ff2 = 9.9 
+if (ff != 9.9) {passed = False}
+
+bool bb = True
+bool bb2 = &bb
+bb = False
+if (bb2) {passed = False}
+bb2 = True
+if (!bb) {passed = False}
+
+string ss = 'asdf'
+string ss2 = &ss
+ss = 'erty'
+if (ss2 != 'erty') {passed = False}
+ss2 = 'qwe'
+if (ss != 'qwe') {passed = False}
+
+class CT {int j = 45}
+CT ct
+int ci = &ct.j
+ci = 35
+if (ct.j != 35) {passed = False}
+ct.j = 55
+if (ci != 55) {passed = False}
+
+
+# TEST ASSIGN VARIABLE LIST INDEX
+
+list ail = [1,2,3,4,5,6,7,8]
+
+int iv = 17
+list il2 = [14,24,34]
+int aif() {return 15}
+class AIC {int i = 16}
+AIC aic
+
+ail[0] = 10
+ail[1] = ++10
+ail[2] = 13-1
+ail[3] = il2[0]
+ail[4] = aif()
+ail[5] = aic.i
+ail[6] = iv
+
+if (ail[0] != 10 || ail[1] != 11 || ail[2] != 12 || ail[3] != 14 || ail[4] != 15 || ail[5] != 16 || ail[6] != 17) {passed = False}
+
+# TEST ASSIGN VARIABLE BUILT-IN-TYPES
+float af1
+float af2
+float af3
+float af4
+float af5
+float af6
+float af7
+
+float fv = 7.7
+list fl2 = [1.1, 2.2, 3.3, 4.4]
+float aff() {return 5.5}
+class AFC {float f = 6.6}
+AFC afc
+
+af1 = 1.1
+af2 = ++1.2
+af3 = 1.1 + 2.2
+af4 = fl2[3]
+af5 = aff()
+af6 = afc.f
+af7 = fv
+
+if (af1 != 1.1 || af2 != 2.2 || af3 != 3.3 || af4 != 4.4 || af5 != 5.5 || af6 != 6.6 || af7 != 7.7) {passed = False}
+
+# TEST ASSIGN VARIABLE CLASS TYPES
+class TEST
+{
+	int i
+}
+TEST test1
+TEST test2
+
+test1.i = 88
+test2 = test1
+
+if (test2.i != 88) {passed = False}
+
+
+# TEST ASSIGN VARIABLE PASS BY REFERENCE
+int ii3 = 7
+int ii4
+ii4 = &ii3
+ii3 = 9
+if (ii4 != 9) {passed = False}
+ii4 = 5
+if (ii3 != 5) {passed = False}
+
+float ff3 = 6.7
+float ff4 
+ff4 = &ff3
+ff3 = 4.4
+if (ff4 != 4.4) {passed = False}
+ff4 = 9.9 
+if (ff3 != 9.9) {passed = False}
+
+bool bb3 = True
+bool bb4
+bb4 = &bb3
+bb3 = False
+if (bb4) {passed = False}
+bb4 = True
+if (!bb3) {passed = False}
+
+string ss3 = 'asdf'
+string ss4
+ss4 = &ss3
+ss3 = 'erty'
+if (ss4 != 'erty') {passed = False}
+ss4 = 'qwe'
+if (ss3 != 'qwe') {passed = False}
+
+class CT2 {int j = 45}
+CT2 ct2
+int ci2
+ci2 = &ct2.j
+ci2 = 35
+if (ct2.j != 35) {passed = False}
+ct2.j = 55
+if (ci2 != 55) {passed = False}
+
+passed

@@ -1,0 +1,56 @@
+ 
+bool passed = True
+
+class IC {int i = 2}
+IC ic
+int ri() {return 1}
+list il = [3]
+int i = 4
+
+if (0 + i != 4 || i + 0 != 4 || 0 + il[0] != 3 || il[0] + 0 != 3 || 0 + ic.i != 2) {passed = False}
+if (ic.i + 0 != 2 || ri() + 0 != 1 || 0 + ri() != 1) {passed = False}
+if (0 + i + il[0] + ri() + ic.i != 10) {passed = False}
+
+if (0 - i != -4 || i - 0 != 4 || 0 - il[0] != -3 || il[0] - 0 != 3 || 0 - ic.i != -2) {passed = False}
+if (ic.i - 0 != 2 || ri() - 0 != 1 || 0 - ri() != -1) {passed = False}
+if (0 - i - il[0] - ri() - ic.i != -10) {passed = False}
+
+if (1 / i != 0.25 || i / 1 != 4 || 1 / il[0] != 0.333333333 || il[0] / 1 != 3 || 1 / ic.i != 0.5) {passed = False}
+if (ic.i / 1 != 2 || ri() / 1 != 1 || 1 / ri() != 1) {passed = False}
+if (0 / i / il[0] / ri() / ic.i != 0) {passed = False}
+
+if (1 * i != 4 || i * 1 != 4 || 1 * il[0] != 3 || il[0] * 1 != 3 || 1 * ic.i != 2) {passed = False}
+if (ic.i * 1 != 2 || ri() * 1 != 1 || 1 * ri() != 1) {passed = False}
+if (0 * i * il[0] * ri() * ic.i != 0) {passed = False}
+
+if (1 // i != 0 || i // 1 != 4 || 1 // il[0] != 0 || il[0] // 1 != 3 || 1 // ic.i != 0) {passed = False}
+if (ic.i // 1 != 2 || ri() // 1 != 1 || 1 // ri() != 1) {passed = False}
+if (0 // i // il[0] // ri() // ic.i != 0) {passed = False}
+
+if (1 % i != 1 || i % 1 != 0 || 1 % il[0] != 1 || il[0] % 1 != 0 || 1 % ic.i != 1) {passed = False}
+if (ic.i % 1 != 0 || ri() % 1 != 0 || 1 % ri() != 0) {passed = False}
+if (0 % i % il[0] % ri() % ic.i != 0) {passed = False}
+
+string s = 'a'
+list l = ['b']
+class S {string c = 'c'}
+S c
+
+if ('d' + s != 'da' || s + 'd' != 'ad' || 'd' + l[0] != 'db' || l[0] + 'd' != 'bd' || 'd' + c.c != 'dc' || c.c + 'd' != 'cd') {passed = False}
+if (s + l[0] != 'ab' || l[0] + s != 'ba' || s + c.c != 'ac' || c.c + s != 'ca') {passed = False}
+if (l[0] + c.c != 'bc' || c.c + l[0] != 'cb') {passed = False}
+
+int ii
+float ff
+list l4 = [1.1]
+class I {int i}
+I ci
+
+if (++3 != 4 || 3++ != 3 || ++ii != 1 || ii++ != 1 || ++ff != 1 || ff++ != 1) {passed = False} 
+if (++l4[0] != 2.1 || l4[0]++ != 2.1 || ++ci.i != 1 || ci.i++ != 1) {passed = False}
+
+if (ii != 2 || ff != 2 || l4[0] != 3.1 || ci.i != 2) {passed = False}
+
+if (-ii != -2 || -ff != -2 || -l4[0] != -3.1 || -ci.i != -2)  {passed = False}
+
+passed

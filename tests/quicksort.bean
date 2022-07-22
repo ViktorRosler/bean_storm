@@ -1,0 +1,73 @@
+int quicksort(list a, int low, int high)
+{
+	if (low < high)
+	{
+		int p = partition(a, low, high)
+		quicksort(a, low, p)
+		quicksort(a, p + 1, high)
+	}
+}
+
+
+int partition(list a, int low, int high)
+{
+	int pivot = a[(high + low) // 2]
+	
+	while (low < high)
+	{
+		if (a[low] >= pivot && a[high] < pivot)
+		{
+			int tmp = a[low]
+			a[low] = a[high]
+			a[high] = tmp
+			low = low + 1
+			high = high - 1
+		}
+		elif (a[high] >= pivot)
+		{
+			high = high -1
+		}
+		elif (a[low] < pivot)
+		{
+			low = low + 1
+		}
+		
+	}
+
+	return high
+}
+
+
+bool passed = True
+
+
+list nums1 = [1,3,2,4]
+quicksort(nums1, 0, 3)
+if (nums1[1] != 2 && nums1[2] != 3)
+	{print "Error on line 50"
+	passed = False}
+
+list nums2 = [4,3,2,1,0,-1]
+quicksort(nums2, 0, 5)
+if (nums2[0] != -1 && nums2[5] != 4)
+	{print "Error on line 56"
+	passed = False}
+	
+list nums3 = [0]
+quicksort(nums3, 0, 0)
+if (nums3[0] != 0)
+	{print "Error on line 62"
+	passed = False}
+	
+list nested = [[3,2,1],[3,2,1],[3,2,1]]
+int i = 0
+while (i < 3)
+{
+	quicksort(nested[i], 0, 2)
+	i++
+}
+if (nested[1][1] != 2)
+	{print "Error on line 73"
+	passed = False}
+
+passed
